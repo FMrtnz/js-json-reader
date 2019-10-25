@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JSON</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script>
+		var json = '{"name": "Peter", "age": 22, "country": "United States"}';
+
+		var jqxhr = $.getJSON( json, function() {
+		  console.log( "success" );
+		})
+	  .done(function() {
+	    console.log( "second success" );
+	  })
+	  .fail(function() {
+	    console.log( "error" );
+	  })
+	  .always(function() {
+	    console.log( "complete" );
+	  });
+	</script>
+</head>
+<body>
+
+</body>
+</html>
