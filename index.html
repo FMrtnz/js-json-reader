@@ -5,20 +5,23 @@
 	<title>JSON</title>
 	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
-		var json = '{"name": "Peter", "age": 22, "country": "United States"}';
+		function readTextFile(file, callback) {
+		    var rawFile = new XMLHttpRequest();
+		    rawFile.overrideMimeType("application/json");
+		    rawFile.open("GET", file, true);
+		    rawFile.onreadystatechange = function() {
+		        if (rawFile.readyState === 4 && rawFile.status == "200") {
+		            callback(rawFile.responseText);
+		        }
+		    }
+		    rawFile.send(null);
+		}
 
-		var jqxhr = $.getJSON( json, function() {
-		  console.log( "success" );
-		})
-	  .done(function() {
-	    console.log( "second success" );
-	  })
-	  .fail(function() {
-	    console.log( "error" );
-	  })
-	  .always(function() {
-	    console.log( "complete" );
-	  });
+		//usage:
+		readTextFile("./data.json", function(text){
+		    var data = JSON.parse(text);
+		    console.log(data);
+		});
 	</script>
 </head>
 <body>
