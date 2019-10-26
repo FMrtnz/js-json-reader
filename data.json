@@ -1,12 +1,13 @@
-data = '{
-	"title": "test",
-	"text": "txt"
-},
 {
-	"title": "test 22",
-	"text": "txt 22"
-},
-{
-	"title": "test 33",
-	"text": "txt 33"
-}'
+	"data":[
+		{
+	
+			"title": "test",
+			"text": "txt"
+		},
+		{
+			"title": "test2",
+			"text": "txt2"
+		}
+	]
+}
