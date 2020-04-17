@@ -20,7 +20,10 @@
 		//usage:
 		readTextFile("./data.json", function(text){
 		    var data = JSON.parse(text);
-		    console.log(data);
+				$.each(data["data"], function(i){
+					arr = data["data"];
+					$("body").append("<p>" + arr[i]["title"] + " - "+ arr[i]["text"] + "</p>");
+				})
 		});
 	</script>
 </head>
